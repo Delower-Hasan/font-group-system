@@ -1,7 +1,8 @@
 Options -MultiViews
 
 RewriteEngine On
-RewriteBase /oop-mvc-php/public
+RewriteBase /project/
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]

@@ -1,8 +1,12 @@
 <?php
 
- use Illuminate\Database\Eloquent\Model as Eloquent;
+namespace App\Models;
+use Illuminate\Database\Eloquent\Model as Eloquent;
+
 
 class User extends Eloquent {
+    protected $table = 'users';
+    public $timestamps = true; 
 
-    protected $fillable = ['name','email'];
+    protected $fillable = ['fname','email'];
 } 

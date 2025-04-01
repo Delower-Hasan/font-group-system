@@ -1,1 +1,8 @@
 /vendor
+/composer.lock
+/logs
+/storage
+/cache
+/config
+/public
+/resources

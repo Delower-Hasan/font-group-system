@@ -1,0 +1,1 @@
+## migrate the schema: php app/config/migrate.php
