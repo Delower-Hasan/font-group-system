@@ -11,6 +11,6 @@ class App {
         require_once __DIR__.'/../routes.php';
         
         // Run the router
-        Route::run('/project');
+        Route::run('/font-group-system');
     }
 }

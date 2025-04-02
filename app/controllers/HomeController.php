@@ -63,8 +63,6 @@ class HomeController extends Controller {
 
         $file = $request->file('file');
         
-        // Handle file upload logic here
-        // For example:
         $uploadPath = 'uploads/' . $file['name'];
         move_uploaded_file($file['tmp_name'], $uploadPath);
         
