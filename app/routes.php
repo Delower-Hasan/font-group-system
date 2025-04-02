@@ -3,9 +3,20 @@ use Core\Route;
 
 //middleware-> api
 // Define your routes here
-Route::get('/', 'HomeController@index');
-Route::get('/about/:id', 'HomeController@about');
-Route::post('/api/create', 'HomeController@create');
+
+// fonts
+Route::get('/', 'FontController@index');
+Route::get('/api/fonts', 'FontController@list');
+Route::post('/api/fonts/upload', 'FontController@upload');
+Route::delete('/api/fonts/:id', 'FontController@destroy');
+// fonts groups
+Route::get('/api/font-groups', 'FontGroupController@index');
+Route::post('/api/font-groups', 'FontGroupController@store');
+Route::get('/api/font-groups/:id', 'FontGroupController@show');
+Route::put('/api/font-groups/:id', 'FontGroupController@update');
+Route::delete('/api/font-groups/:id', 'FontGroupController@destroy');
+
+
 
 
 // Error handlers
