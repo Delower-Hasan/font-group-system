@@ -2,7 +2,7 @@
 
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model as Eloquent;
-
+use App\Models\FontGroup;
 
 class Font extends Eloquent {
     protected $table = 'fonts';
