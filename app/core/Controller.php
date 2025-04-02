@@ -133,17 +133,17 @@ class Controller {
         $errors = [];
         
         foreach ($rules as $field => $rule) {
-            if (strpos($rule, 'required') !== false && empty($data[$field])) {
+            if (strpos($rule, 'required') !== false && (empty($data[$field]) || (is_array($data[$field]) && count($data[$field]) == 0))) {
                 $errors[$field] = ucfirst($field) . ' is required';
             }
             
-            if (strpos($rule, 'email') !== false && !empty($data[$field]) && !filter_var($data[$field], FILTER_VALIDATE_EMAIL)) {
+            if (strpos($rule, 'email') !== false && !empty($data[$field]) && is_string($data[$field]) && !filter_var($data[$field], FILTER_VALIDATE_EMAIL)) {
                 $errors[$field] = 'Invalid email format';
             }
             
             if (strpos($rule, 'min:') !== false) {
                 $min = substr($rule, strpos($rule, 'min:') + 4);
-                if (!empty($data[$field]) && strlen($data[$field]) < $min) {
+                if (!empty($data[$field]) && is_string($data[$field]) && strlen($data[$field]) < $min) {
                     $errors[$field] = ucfirst($field) . " must be at least {$min} characters";
                 }
             }
