@@ -26,10 +26,14 @@ class FontGroupController  extends Controller {
         $request = Request::capture();
         
         $errors = $this->validate($request->all(), [
-            'name' => 'required|max:255',
-            'fonts' => 'required|min:2',
+            'name' => 'required|String|max:255',
+            'fonts' => 'required|Array|min:2',
             'fonts.*' => 'exists:fonts,id'
          ]);
+
+         if(count($request->fonts) < 2){
+            return $this->error('Error creating font group. Please select at least 2 fonts.');
+         }
 
             if (!empty($errors)) {
                 $this->validationError($errors);
