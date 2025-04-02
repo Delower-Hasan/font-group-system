@@ -3,8 +3,6 @@
 require __DIR__ . '/../../vendor/autoload.php';
 require 'database.php';
 
-
-
 // imports
 require 'migrations/CreateFontsTable.php';
 require 'migrations/CreateFontGroupsTable.php';
@@ -18,10 +16,7 @@ CreateFontGroupItemsTable::up();
 
 
 
-
-
 // CreateFontsTable::modifyUsersTable();
-
 
 // To drop tables, call:
 // CreateFontsTable::down();
