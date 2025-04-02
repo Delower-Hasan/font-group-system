@@ -6,12 +6,24 @@ require 'database.php';
 
 
 // imports
-require 'migrations/CreateUsersTable.php';
+require 'migrations/CreateFontsTable.php';
+require 'migrations/CreateFontGroupsTable.php';
+require 'migrations/CreateFontGroupItemsTable.php';
 
 // Run migrations
-CreateUsersTable::up();
-// CreateUsersTable::modifyUsersTable();
+CreateFontsTable::up();
+CreateFontGroupsTable::up();
+CreateFontGroupItemsTable::up();
+
+
+
+
+
+
+// CreateFontsTable::modifyUsersTable();
 
 
 // To drop tables, call:
-// CreateUsersTable::down();
+// CreateFontsTable::down();
+// CreateFontGroupsTable::down();
+// CreateFontGroupItemsTable::down();
